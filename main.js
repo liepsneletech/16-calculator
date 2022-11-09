@@ -2,29 +2,44 @@ const calculatorDOM = document.getElementById("calculator");
 
 calculatorDOM.classList.add("calculator");
 
-const screenDOM = `<div class="screen"></div>`;
-
-calculatorDOM.innerHTML = screenDOM;
-console.log(screenDOM);
+const screen = `<div class="screen"></div>`;
 
 const btnsArr = [
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
     "7",
     "8",
     "9",
     "+",
+    "4",
+    "5",
+    "6",
     "-",
-    "*",
-    "/",
+    "1",
+    "2",
+    "3",
+    "&times;",
+    "0",
+    "&#247;",
+    "=",
 ];
 
-let btnsDOM = "";
+let btns = "";
 
 for (const item of btnsArr) {
+    btns += `<button class="btn">${item}</button>`;
 }
+
+const generatedHTML = `${screen}
+<div class="btns">${btns}</div>`;
+
+calculatorDOM.innerHTML = generatedHTML;
+
+const btnsDOM = calculatorDOM.querySelectorAll(".btn");
+
+for (let i = 0; i < btnsDOM.length; i++) {
+    btnsDOM[i].addEventListener("click", function () {
+        btnsDOM[i].classList.add("clicked");
+    });
+}
+
+const screenDOM = calculatorDOM.querySelector(".screen");
+console.log(screenDOM);
