@@ -37,11 +37,15 @@ const btnsDOM = calculatorDOM.querySelectorAll(".btn");
 
 const screenDOM = calculatorDOM.querySelector(".screen");
 
-let screenContent = "";
+function resultStr() {
+    for (let i = 0; i < btnsDOM.length; i++) {
+        btnsDOM[i].addEventListener("click", function () {
+            btnsDOM[i].classList.add("clicked");
+            screenDOM.innerHTML += `${btnsDOM[i].innerHTML}`;
+        });
+    }
 
-for (let i = 0; i < btnsDOM.length; i++) {
-    btnsDOM[i].addEventListener("click", function () {
-        btnsDOM[i].classList.add("clicked");
-        screenDOM.innerHTML += `${btnsDOM[i].innerHTML}`;
-    });
+    return screenDOM.innerHTML;
 }
+
+resultStr();
