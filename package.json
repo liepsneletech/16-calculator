@@ -1,0 +1,15 @@
+{
+    "name": "16-calculator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "dev": "dead-server --port=4016 --host=localhost"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "dead-server": "^1.0.8"
+    }
+}
