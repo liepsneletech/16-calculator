@@ -35,11 +35,13 @@ calculatorDOM.innerHTML = generatedHTML;
 
 const btnsDOM = calculatorDOM.querySelectorAll(".btn");
 
+const screenDOM = calculatorDOM.querySelector(".screen");
+
+let screenContent = "";
+
 for (let i = 0; i < btnsDOM.length; i++) {
     btnsDOM[i].addEventListener("click", function () {
         btnsDOM[i].classList.add("clicked");
+        screenDOM.innerHTML += `${btnsDOM[i].innerHTML}`;
     });
 }
-
-const screenDOM = calculatorDOM.querySelector(".screen");
-console.log(screenDOM);
